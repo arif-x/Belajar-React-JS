@@ -6,13 +6,23 @@
 	<script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
 	<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 	<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+	<style type="text/css">
+		.messages {
+			background-color: #fff;
+			color: #000;
+		}
+	</style>
 </head>
 <body>
-	<div id="app"></div>
+	<div id="app"></div><br>
 
-	<div id="jsx-app"></div>
+	<div id="jsx-app"></div><br>
+
+	<div id="jsx-app-2"></div><br>
 
 	<script type="text/babel">
+		// Class
 		class Hello extends React.Component {
 			render(){
 				return <h1>Hello World!</h1>
@@ -20,8 +30,18 @@
 		}
 		ReactDOM.render(<Hello/>, document.getElementById("app"));
 
+		// JSX
 		let message = <h2>Hello World (JSX)</h2>;
 		ReactDOM.render(message, document.getElementById("jsx-app"));
+
+		// JSX CSS Class
+		let messages = (
+			<messages className="messages">
+				<h3>Hello World (JSX Class)</h3>
+				<h4>Hurah</h4>
+			</messages>
+		);
+		ReactDOM.render(messages, document.getElementById("jsx-app-2"));
 	</script>
 </body>
 </html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Sinau React JS</title>
+	<script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+	<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+	<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+	<div id="app"></div><br>
+
+	<script type="text/babel">
+		class States extends React.Component {
+			constructor() {
+				super();
+				this.state = {
+					title: "Belajar React JS",
+					subTitle: "State React JS"
+				};
+			}
+
+			changeTitle = () => {
+				this.setState({
+					title: "From Zero to Hero",
+					subTitle: "Gas"
+				});
+			}
+
+			changeTitles = () => {
+				this.setState({
+					title: "Belajar React JS",
+					subTitle: "State React JS"
+				});
+			}
+
+			render() {
+				return (
+					<div>
+						<h1>{this.state.title}</h1>
+						<h2>{this.state.subTitle}</h2>
+						<button onClick={this.changeTitle}>Change</button>
+						<button onClick={this.changeTitles}>Back</button>
+					</div>
+				);
+			}
+		}
+
+		ReactDOM.render(<States />, document.getElementById("app"));
+	</script>
+</body>
+</html>
